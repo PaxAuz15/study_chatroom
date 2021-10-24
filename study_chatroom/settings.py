@@ -56,7 +56,9 @@ ROOT_URLCONF = 'study_chatroom.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates' #adding template folders on django project
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
