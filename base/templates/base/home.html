@@ -6,6 +6,7 @@
 <div>
     <div>
         <!-- Django Template Engine -->
+        <a href="{% url 'create-room' %}">Create Room</a>
         {% for room in rooms %}
             <div>
                 <span>@{{room.host.username}}</span>
