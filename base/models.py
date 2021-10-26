@@ -1,5 +1,6 @@
 from django.db import models
-from django.db.models.base import Model
+from django.contrib.auth.models import User
+from django.db.models.deletion import CASCADE
 
 # Create your models here.
 
@@ -16,7 +17,7 @@ class Room(models.Model):
         return self.name
 
 class Message(models.Model):
-    # user = 
+    user = models.ForeignKey(User, on_delete=CASCADE)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     body = models.TextField()
     updated = models.DateTimeField(auto_now=True)
